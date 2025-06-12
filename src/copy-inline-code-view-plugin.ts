@@ -57,7 +57,7 @@ class CopyInlineCodeViewPlugin implements PluginValue {
 							node.from,
 							node.to
 						);
-						if (shouldExclude(codeText, filters)) {
+						if (shouldExclude(codeText, filters) || node.to + 1 > view.state.doc.length) {
 							return;
 						}
 						builder.add(
